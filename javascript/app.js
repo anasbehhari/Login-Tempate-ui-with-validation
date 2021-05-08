@@ -28,7 +28,7 @@ submit_button.onclick = (e) => {
             if (data.fullname_input.value != "" && data.fullname[0].children[1]) {
                 data.fullname[0].children[1].remove()
                 data.fullname.removeClass("danger")
-                pass = true;
+                pass=true
             }
         }
     }
@@ -81,7 +81,7 @@ submit_button.onclick = (e) => {
         data.password[0].children[1].removeClass("danger")
         pass = true;
     }
-    alert(pass + data.checkbox_input.checked)
+    alert(pass)
     if (!pass && !data.checkbox_input.checked) {
         e.preventDefault();
     }
