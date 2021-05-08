@@ -1,4 +1,5 @@
 const submit_button = document.querySelector("button");
+var pass = true;
 const data =
 {
     fullname: $(".fullname"),
@@ -18,7 +19,7 @@ function validateEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 submit_button.onclick = (e) => {
-    var pass = true;
+    
     if (!data.fullname_input.value && $(data.fullname)[0].children.length < 2) {
         pass = false;
         data.fullname.append("<small class='danger'><i class='bi bi-exclamation-circle-fill'></i> Saisisser votre nom complet.</small>")
@@ -82,7 +83,7 @@ submit_button.onclick = (e) => {
         pass = true;
     }
     alert(pass)
-    if (!pass && !data.checkbox_input.checked) {
+    if (!pass || !data.checkbox_input.checked) {
         e.preventDefault();
     }
    
