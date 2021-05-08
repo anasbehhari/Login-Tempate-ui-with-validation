@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+:root {
+  --body-font: "Roboto", sans-serif;
+  --body-color: #fafcfd;
+  --main-color: #ff5160;
+  --input-border-color: #74747457;
+  --input-color: #747474;
+  --checkbox-color: #868686;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100vh;
+  background-color: var(--body-color);
+  * {
+    font-family: var(--body-font);
+  }
+  main {
+    position: relative;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    box-shadow: 0px 4px 5px #00000024;
+    border-radius: 4px;
+    background-color: #fff;
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1.5rem;
+      width: 25rem;
+      .icon {
+        width: 3rem;
+        height: 3.5rem;
+        background-color: var(--main-color);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: #00000024 0px 4px 5px;
+        transform: translateY(-2rem);
+        img {
+          width: 2rem;
+        }
+      }
+      form {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        .container-text {
+          margin-bottom: 1rem;
+          h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #000;
+          }
+          span {
+            color: var(--input-color);
+          }
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          color: var(--main-color);
+          &.danger {
+            color: #d93025 !important;
+          }
+          .input {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 3rem;
+            width: 100%;
+            margin-top: 1.5rem;
+            color: currentColor;
+            &.ps {
+              margin-top: 0.8rem !important;
+            }
+            .input-tag {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: calc(100% - 2rem);
+              height: 100%;
+              border: 2px solid var(--input-border-color);
+              border-radius: 3px;
+              outline: none;
+              background: transparent;
+              padding: 0 1rem;
+              z-index: 1;
+              font-size: 0.95rem;
+              &:focus {
+                border-color: currentColor;
+                color: currentColor;
+                & + label {
+                  top: -0.5rem;
+                  font-size: 0.8rem;
+                  color: currentColor;
+                  background-color: #fff;
+                  padding: 0 0.2rem;
+                }
+              }
+              &:not(:placeholder-shown) + label {
+                top: -0.5rem;
+                font-size: 0.8rem;
+                background-color: #fff;
+                padding: 0 0.2rem;
+              }
+            }
+            label {
+              position: absolute;
+              left: 1rem;
+              top: 1rem;
+              color: var(--input-color);
+              font-size: 0.95rem;
+              transition: 0.25s;
+              z-index: 1;
+            }
+            i {
+              position: absolute;
+              top: 50%;
+              left: calc(100% - 1.9rem);
+              font-size: 1.2rem;
+              transform: translateY(-40%);
+              color: var(--checkbox-color);
+              &::before {
+                content: "\f33e";
+              }
+              cursor: pointer;
+              z-index: 9;
+              &.hide {
+                &::before {
+                  content: "\f33f";
+                }
+              }
+            }
+          }
+          small {
+            color: var(--input-color);
+            font-weight: 100;
+            margin-left: 0.5rem;
+            margin-bottom: 0;
+            margin-top: 1rem;
+            width: fit-content;
+            i {
+              margin-right: 0.1rem;
+            }
+            &.danger {
+              color: #d93025;
+            }
+          }
+        }
+
+        .checkbox {
+          display: flex;
+          flex-direction: row !important;
+          align-items: center;
+          margin: 2rem 0 0.5rem 0;
+          input:checked {
+            & + label {
+              border-color: var(--main-color);
+              background-color: var(--main-color);
+            }
+            & + svg {
+              transform: scale(1);
+            }
+          }
+          label {
+            position: relative;
+            width: 0.9rem;
+            height: 0.9rem;
+            border: 2px solid var(--checkbox-color);
+            border-radius: 1.5px;
+            margin-left: 0.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s background-color;
+            cursor: pointer;
+            svg {
+              width: 0.6rem;
+              fill: #fff;
+              transition: 0.3s transform;
+            }
+          }
+          span {
+            font-size: .94rem;
+            margin-left: 0.7rem;
+            color: var(--input-color);
+            a {
+              color: var(--main-color);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      button {
+        background-color: var(--main-color);
+        border: none;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 3px;
+        text-transform: uppercase;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        font-weight: lighter;
+        letter-spacing: 1px;
+        font-size: 0.95rem;
+        transition: 0.4s box-shadow, 0.2s transform;
+        cursor: pointer;
+        &:hover {
+          box-shadow: #ff516067 0px 4px 15px;
+        }
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+      small.me {
+        color: var(--checkbox-color);
+        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
+        a {
+          color: var(--main-color);
+          font-weight: 500;
+        }
+      }
+    }
+    .right-section {
+      position: relative;
+      width: 40rem;
+      background-image: url(/images/retraite-artisans.jpg);
+      background-size: cover;
+      border-radius: 0 3px 3px 0;
+      background-position: center center;
+      &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #2e2d2d79;
+        content: "";
+      }
+    }
+  }
+}
+
+@media (max-width: 80rem) {
+  body {
+    align-items: baseline;
+    main {
+      top: 1rem !important;
+      margin-bottom: 1rem !important;
+      transform: translate(-50%, 0) !important;
+      flex-direction: column-reverse !important;
+      width: 765px !important ;
+      .right-section {
+        width: auto !important;
+        height: 20rem !important;
+        z-index: 1 !important;
+      }
+      .left-section {
+        z-index: 2 !important;
+        width: calc(100% - 3.3rem) !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    main {
+      overflow: hidden !important;
+      width: 95% !important;
+    }
+  }
+}
