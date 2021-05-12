@@ -6,6 +6,7 @@
   --input-border-color: #74747457;
   --input-color: #747474;
   --checkbox-color: #868686;
+  --failure-clr : #d93025;
 }
 
 body {
@@ -69,8 +70,8 @@ body {
           flex-direction: column;
           width: 100%;
           color: var(--main-color);
-          &.danger {
-            color: #d93025 !important;
+          &.failure {
+            color: var(--failure-clr) !important;
           }
           .input {
             display: flex;
@@ -152,9 +153,11 @@ body {
             i {
               margin-right: 0.1rem;
             }
-            &.danger {
-              color: #d93025;
+            &.failure {
+              color: var(--failure-clr);
+              font-weight: 400;
             }
+           
           }
         }
 
@@ -264,7 +267,7 @@ body {
       width: 765px !important ;
       .right-section {
         width: auto !important;
-        height: 20rem !important;
+        height: 350px !important;
         z-index: 1 !important;
       }
       .left-section {

@@ -6,6 +6,7 @@
   --input-border-color: #74747457;
   --input-color: #747474;
   --checkbox-color: #868686;
+  --failure-clr: #d93025;
 }
 
 body {
@@ -114,8 +115,8 @@ body main .left-section form div {
   color: var(--main-color);
 }
 
-body main .left-section form div.danger {
-  color: #d93025 !important;
+body main .left-section form div.failure {
+  color: var(--failure-clr) !important;
 }
 
 body main .left-section form div .input {
@@ -218,8 +219,9 @@ body main .left-section form div small i {
   margin-right: 0.1rem;
 }
 
-body main .left-section form div small.danger {
-  color: #d93025;
+body main .left-section form div small.failure {
+  color: var(--failure-clr);
+  font-weight: 400;
 }
 
 body main .left-section form .checkbox {
@@ -366,7 +368,7 @@ body main .right-section::after {
   }
   body main .right-section {
     width: auto !important;
-    height: 20rem !important;
+    height: 350px !important;
     z-index: 1 !important;
   }
   body main .left-section {
