@@ -131,33 +131,10 @@ submit_button.onclick = (e) => {
     }
 
     if (!pass || !data.checkbox_input.checked) {
-        alert(pass)
         e.preventDefault();
     }
     count++;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const eyes = document.querySelectorAll(".bi-ps-s-h");
 eyes.forEach(eye => {
